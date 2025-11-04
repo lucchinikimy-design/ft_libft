@@ -1,6 +1,7 @@
 NAME = LIBFT
 
-SRC = ft_bezero.c \
+SRC = main.c \
+	 ft_bezero.c \
 	  ft_calloc.c \
 	  ft_isalnum.c \
 	  ft_isalpha.c \

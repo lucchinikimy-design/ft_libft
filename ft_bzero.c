@@ -6,9 +6,11 @@
 /*   By: klucchin <klucchin@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 21:30:16 by klucchin          #+#    #+#             */
-/*   Updated: 2025/11/03 21:43:03 by klucchin         ###   ########.fr       */
+/*   Updated: 2025/11/04 17:24:23 by klucchin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_bzero(void *s, unsigned int n)
 {
