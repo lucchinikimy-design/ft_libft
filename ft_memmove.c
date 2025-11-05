@@ -1,20 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: klucchin <klucchin@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/04 17:23:39 by klucchin          #+#    #+#             */
-/*   Updated: 2025/11/05 13:20:21 by klucchin         ###   ########.fr       */
+/*   Created: 2025/11/04 17:35:21 by klucchin          #+#    #+#             */
+/*   Updated: 2025/11/04 21:54:32 by klucchin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	main(int argc, char **argv)
+void	*ft_memmove(void *dest, const void *src, unsigned int n)
 {
-	if (argc != 1 || !argv)
-		return (0);
-	return (0);
+	unsigned char	*ptr;
+	unsigned char	*s;
+	unsigned char	temp[n];
+	unsigned int	i;
+
+	ptr = (unsigned char *)dest;
+	s = (unsigned char *)src;
+	i = 0;
+	while (i < n)
+	{
+		temp[i] = s[i];
+		i++;
+	}
+	i = 0;
+	while (i < n)
+	{
+		ptr[i] = temp[i];
+		i++;
+	}
+	return (ptr);
 }
