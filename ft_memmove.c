@@ -6,7 +6,7 @@
 /*   By: klucchin <klucchin@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 17:35:21 by klucchin          #+#    #+#             */
-/*   Updated: 2025/11/04 21:54:32 by klucchin         ###   ########.fr       */
+/*   Updated: 2025/11/05 18:05:03 by klucchin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,32 @@
 
 void	*ft_memmove(void *dest, const void *src, unsigned int n)
 {
-	unsigned char	*ptr;
-	unsigned char	*s;
-	unsigned char	temp[n];
-	unsigned int	i;
+	unsigned long int	dstp;
+	unsigned long int	srcp;
+	int					i;
 
-	ptr = (unsigned char *)dest;
-	s = (unsigned char *)src;
-	i = 0;
-	while (i < n)
+	if (!dest || !src)
+		return (NULL);
+	dstp = (long int)dest;
+	srcp = (long int)src;
+	if (dstp - srcp >= n)
+		dest = ft_memcpy(dest, src, n);
+	else
 	{
-		temp[i] = s[i];
-		i++;
+		dstp += n;
+		srcp += n;
+		i = n - 1;
+		while (i >= 0)
+		{
+			*(unsigned char *)(dest + i) = *(unsigned char *)(src + i);
+			i--;
+		}
 	}
-	i = 0;
-	while (i < n)
-	{
-		ptr[i] = temp[i];
-		i++;
-	}
-	return (ptr);
+	return (dest);
 }
+
+// int main()
+// {
+// 	char sResult[] = {67, 68, 67, 68, 69, 0, 45};
+// 	ft_memmove(sResult + 1, sResult, 2);
+// }

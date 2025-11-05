@@ -6,7 +6,7 @@
 /*   By: klucchin <klucchin@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 17:13:49 by klucchin          #+#    #+#             */
-/*   Updated: 2025/11/05 13:24:06 by klucchin         ###   ########.fr       */
+/*   Updated: 2025/11/05 13:29:28 by klucchin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,6 @@ int		ft_strlen(const char *s);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 int		ft_strlcpy(char *dst, const char *src, unsigned int size);
+int		ft_strlcat(char *dst, const char *src, unsigned int size);
 
 #endif

@@ -1,7 +1,6 @@
-NAME = LIBFT
+NAME = libft.a
 
-SRC = main.c \
-	  ft_bzero.c \
+SRC = ft_bzero.c \
 	  ft_isalnum.c \
 	  ft_isalpha.c \
 	  ft_isascii.c \
@@ -13,18 +12,22 @@ SRC = main.c \
 	  ft_strlen.c \
 	  ft_tolower.c \
 	  ft_toupper.c \
-	  ft_strlcpy.c
+	  ft_strlcpy.c \
+	  ft_strlcat.c
 
 OBJ = $(SRC:.c=.o)
 
 CC = cc
-CFLAGS = -Wall -Werror -Wextra -fsanitize=address,undefined,leak -g3
+CFLAGS = -Wall -Werror -Wextra #-fsanitize=address,undefined,leak -g3
 
 $(NAME) : $(OBJ)
-# 	ar rcs $(NAME) $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	ar rcs $(NAME) $(OBJ)
+# 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 all : $(NAME)
+
+%.c%.o:
+	$(CC) $(CFLAGS) $< -o $@
 
 clean :
 	rm -rf $(OBJ)
