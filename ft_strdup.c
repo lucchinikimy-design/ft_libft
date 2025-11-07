@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: klucchin <klucchin@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/03 21:27:13 by klucchin          #+#    #+#             */
-/*   Updated: 2025/11/07 17:42:43 by klucchin         ###   ########.fr       */
+/*   Created: 2025/11/07 16:16:45 by klucchin          #+#    #+#             */
+/*   Updated: 2025/11/07 16:43:39 by klucchin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, unsigned int n)
+char	*ft_strdup(const char *s)
 {
-	unsigned char	*ptr;
-	unsigned int	i;
+	char	*dest;
+	int		i;
 
-	ptr = (unsigned char *)s;
+	dest = (char *)malloc(ft_strlen(s) + 1);
+	if (!dest)
+		return (NULL);
 	i = 0;
-	while (i < n)
+	while (s[i] != '\0')
 	{
-		ptr[i] = (unsigned char)c;
+		dest[i] = s[i];
 		i++;
 	}
-	return (s);
+	dest[i] = 0;
+	return (dest);
 }
+
+// int main()
+// {
+//     printf("%s", ft_strdup("HelloWorld"));
+//     return (0);
+// }

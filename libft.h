@@ -6,7 +6,7 @@
 /*   By: klucchin <klucchin@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 17:13:49 by klucchin          #+#    #+#             */
-/*   Updated: 2025/11/05 13:29:28 by klucchin         ###   ########.fr       */
+/*   Updated: 2025/11/07 16:48:44 by klucchin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stddef.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include <string.h>
 # include <unistd.h>
 
 void	ft_bzero(void *s, unsigned int n);
@@ -33,5 +34,14 @@ int		ft_tolower(int c);
 int		ft_toupper(int c);
 int		ft_strlcpy(char *dst, const char *src, unsigned int size);
 int		ft_strlcat(char *dst, const char *src, unsigned int size);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strrchr(const char *s, int c);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+void	*ft_memchr(const void *s, int c, size_t n);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
+char	*ft_strnstr(const char *big, const char *little, size_t len);
+int		ft_atoi(const char *nptr);
+char	*ft_strdup(const char *s);
+void	*ft_calloc(size_t nmemb, size_t size);
 
 #endif

@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: klucchin <klucchin@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/03 21:27:13 by klucchin          #+#    #+#             */
-/*   Updated: 2025/11/07 17:42:43 by klucchin         ###   ########.fr       */
+/*   Created: 2025/11/07 11:02:36 by klucchin          #+#    #+#             */
+/*   Updated: 2025/11/07 14:24:52 by klucchin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, unsigned int n)
+char	*ft_strchr(const char *s, int c)
 {
-	unsigned char	*ptr;
-	unsigned int	i;
+	int	i;
 
-	ptr = (unsigned char *)s;
 	i = 0;
-	while (i < n)
+	while (s[i] != '\0')
 	{
-		ptr[i] = (unsigned char)c;
+		if (s[i] == (char)c)
+			return ((char *)s + i);
 		i++;
 	}
-	return (s);
+	if ((char)c == '\0')
+		return ((char *)s + i);
+	return (NULL);
 }
+
+// #include <stdio.h>
+
+// int main()
+// {
+//     printf("%s\n", ft_strchr("12345", '2'));
+//     return (0);
+// }

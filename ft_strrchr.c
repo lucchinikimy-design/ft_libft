@@ -1,28 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: klucchin <klucchin@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/03 21:27:13 by klucchin          #+#    #+#             */
-/*   Updated: 2025/11/07 17:42:43 by klucchin         ###   ########.fr       */
+/*   Created: 2025/11/07 11:43:43 by klucchin          #+#    #+#             */
+/*   Updated: 2025/11/07 12:03:47 by klucchin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, unsigned int n)
+char	*ft_strrchr(const char *s, int c)
 {
-	unsigned char	*ptr;
-	unsigned int	i;
+	int	i;
 
-	ptr = (unsigned char *)s;
 	i = 0;
-	while (i < n)
-	{
-		ptr[i] = (unsigned char)c;
+	while (s[i] != '\0')
 		i++;
+	while (i >= 0)
+	{
+		if (s[i] == c)
+		{
+			return ((char *)s + i);
+		}
+		i--;
 	}
-	return (s);
+	return (NULL);
 }
+
+// #include <stdio.h>
+
+// int main()
+// {
+//     printf("%s\n", ft_strrchr("heeelllooowww", 'w'));
+//     return (0);
+// }
